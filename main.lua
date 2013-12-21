@@ -1,6 +1,7 @@
-arc_path = 'arc/'
-require(arc_path .. 'arc')
-_navi = require(arc_path .. 'navi')
+-- Set debug options
+io.stdout:setvbuf("no")
+
+_navi = require 'arc'
 
 -- load variables
 function love.load()

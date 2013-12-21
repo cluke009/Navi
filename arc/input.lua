@@ -1,3 +1,4 @@
+local arc_path = (...):match("(.-)[^%.]+$")
 local _, _, _, tab, _ = unpack(require(arc_path .. 'code'))
 local draw  = require(arc_path .. 'draw')
 local sound = require(arc_path .. 'sound')

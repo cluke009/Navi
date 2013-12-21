@@ -3,7 +3,7 @@ local la = love.audio
 local lg = love.graphics
 
 arc = {}
-
+local arc_path = (...):match("(.-)[^%.]+$")
 local _key, _, _ = unpack(require(arc_path .. 'input'))
 
 -- config

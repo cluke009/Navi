@@ -1,6 +1,8 @@
-local draw = require(arc_path .. 'draw')
-local bool, calc, str, tab, misc = unpack(require(arc_path .. 'code'))
-local _, _, _choice = unpack(require(arc_path .. 'input'))
+require(... .. '.arc')
+
+local draw = require(... .. '.draw')
+local bool, calc, str, tab, misc = unpack(require(... .. '.code'))
+local _, _, _choice = unpack(require(... .. '.input'))
 
 -- shortcuts
 local lg = love.graphics
