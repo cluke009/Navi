@@ -37,7 +37,7 @@ arc.col = {
 
 -- font
 arc.fn = {}
-arc.fn.f = lg.newImageFont('fonts/font.png', " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.,!?-+/():;%&`'*#=[]\"")
+arc.fn.f = lg.newImageFont(arc_path .. '/fonts/font.png', " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.,!?-+/():;%&`'*#=[]\"")
 arc.fn.h = arc.fn.f:getHeight() + 2
 arc.fn.w = function(s) return arc.fn.f:getWidth(s) end
 lg.setFont(arc.fn.f)
@@ -57,14 +57,14 @@ arc.key = {
 
 -- images
 arc.img = {
-    cursor  = lg.newImage('pics/cursor.png'),
-    blinker = lg.newImage('pics/press.png')
+    cursor  = lg.newImage(arc_path .. '/pics/cursor.png'),
+    blinker = lg.newImage(arc_path .. '/pics/press.png')
 }
 
 -- sound effects
 arc.sfx = {
-    cursor  = la.newSource('sounds/cursor.wav', 'static'),
-    confirm = la.newSource('sounds/confirm.wav', 'static')
+    cursor  = la.newSource(arc_path .. '/sounds/cursor.wav', 'static'),
+    confirm = la.newSource(arc_path .. '/sounds/confirm.wav', 'static')
 }
 
 -- process directional keys

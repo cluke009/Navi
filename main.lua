@@ -15,10 +15,10 @@ function love.load()
     }
     -- images
     img = {
-        logo   = lg.newImage('pics/logo.png'),
-        face   = lg.newImage('pics/face.png'),
-        avatar = lg.newImage('pics/avatar.png'),
-        bg     = lg.newImage('pics/bg-highup.png')
+        logo   = lg.newImage('assets/pics/logo.png'),
+        face   = lg.newImage('assets/pics/face.png'),
+        avatar = lg.newImage('assets/pics/avatar.png'),
+        bg     = lg.newImage('assets/pics/bg-highup.png')
     }
 
     iw, ih = img.logo:getWidth(), img.logo:getHeight()
@@ -60,20 +60,20 @@ end
 -- draw stuff
 function love.draw()
     lg.setColor(col.white)
-    lg.draw(img.bg,0,0)
-    lg.draw(img.logo,0,20)
+    lg.draw(img.bg, 0, 0)
+    lg.draw(img.logo, 0, 20)
 
     if (m_correct:is_over() or m_wrong:is_over()) then
-        m2:play(10,10)
+        m2:play(10, 10)
     else
         if m[#m]:is_over() then
             local p = m[5]:get_pick()
             if p == 2 then
-                m_correct:play(10,10)
+                m_correct:play(10, 10)
             else
-                m_wrong:play(10,10)
+                m_wrong:play(10, 10)
             end
-        else _navi.play_list(m,10,10) end
+        else _navi.play_list(m, 10, 10) end
     end
     arc.clear_key()
 end
