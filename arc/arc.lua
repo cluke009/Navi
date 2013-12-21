@@ -8,30 +8,30 @@ local _key,_,_ = unpack(require(arc_path .. 'input'))
 
 -- config
 arc.cfg = {
-	msg_spd = 50, 		        -- chars/sec. message speed
-	msg_tanim = 0.2,		    -- sec. duration of message box open/close animation
-	msg_tscroll = 0.2,	        -- sec. duration of message scroll animation
-	msg_tblink = 0.5,	        -- sec. period of blinker
-	msg_txt_shdw = true,	    -- boolean. true: use text shadow, false: don't use
+    msg_spd = 50,               -- chars/sec. message speed
+    msg_tanim = 0.2,            -- sec. duration of message box open/close animation
+    msg_tscroll = 0.2,          -- sec. duration of message scroll animation
+    msg_tblink = 0.5,           -- sec. period of blinker
+    msg_txt_shdw = true,        -- boolean. true: use text shadow, false: don't use
     msg_nc_short_pause = 10,    -- number. number of characters wait for short pause
     msg_nc_long_pause = 50,    -- number. number of characters wait for short pause
-	key_wait0 = .4,		        -- sec. initial wait for directional buttons
-	key_wait = .1,		        -- sebsequent wait for directional buttons
-	cur_dx = 3,		            -- delta x,y of text wrt cursor right edge
-	cur_dy = -2
+    key_wait0 = .4,             -- sec. initial wait for directional buttons
+    key_wait = .1,              -- sebsequent wait for directional buttons
+    cur_dx = 3,                 -- delta x,y of text wrt cursor right edge
+    cur_dy = -2
 }
 
 -- colors
 arc.col = {
-	white = {255,255,255},
-	black = {0,0,0},
-	gray = {128,128,128},
-	name = {255,255,0},
-	shadow = {0,0,0,192},
-	window = {0,80,160,192},
-	mred = {255,128,128},
-	mgreen = {128,255,128},
-	mblue = {128,192,255},
+    white = {255,255,255},
+    black = {0,0,0},
+    gray = {128,128,128},
+    name = {255,255,0},
+    shadow = {0,0,0,192},
+    window = {0,80,160,192},
+    mred = {255,128,128},
+    mgreen = {128,255,128},
+    mblue = {128,192,255},
     mpurple = {192,128,255}
 }
 
@@ -44,27 +44,27 @@ lg.setFont(arc.fn.f)
 
 -- keys
 arc.btn = {
-	ent = 'z',
-	esc = 'x',
-	kp = ''
+    ent = 'z',
+    esc = 'x',
+    kp = ''
 }
 arc.key = {
-	u = _key:new('up'),
-	r = _key:new('right'),
-	d = _key:new('down'),
-	l = _key:new('left')
+    u = _key:new('up'),
+    r = _key:new('right'),
+    d = _key:new('down'),
+    l = _key:new('left')
 }
 
 -- images
 arc.img = {
-	cursor = lg.newImage('pics/cursor.png'),
-	blinker = lg.newImage('pics/press.png')
+    cursor = lg.newImage('pics/cursor.png'),
+    blinker = lg.newImage('pics/press.png')
 }
 
 -- sound effects
 arc.sfx = {
-	cursor = la.newSource('sounds/cursor.wav','static'),
-	confirm = la.newSource('sounds/confirm.wav','static')
+    cursor = la.newSource('sounds/cursor.wav','static'),
+    confirm = la.newSource('sounds/confirm.wav','static')
 }
 
 -- process directional keys
@@ -76,10 +76,10 @@ end
 
 -- update last key pressed
 function arc.set_key(k)
-	arc.btn.kp = k
+    arc.btn.kp = k
 end
 
 -- clears last key pressed
 function arc.clear_key()
-	arc.btn.kp = ''
+    arc.btn.kp = ''
 end

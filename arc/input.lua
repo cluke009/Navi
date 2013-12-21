@@ -28,7 +28,7 @@ checks whether key registers (hit)
     2: if still held down, the cursor continually moves every time=cfg.wait.
 ]]
 function _key:check(dt)
-    local z = self.pos    
+    local z = self.pos
     self.t = self.t+dt
     if (z==0 and arc.btn.kp==self.btn) or (z==1 and lk.isDown(self.btn) and self.t>arc.cfg.key_wait0) then
         self.pos = self.pos+1

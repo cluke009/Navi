@@ -45,7 +45,7 @@ function draw.win_anim(x,y,w,h,f,d)
         ax = x+w/2*(1-f)
         aw = f*w
         ay = y+h/2
-        ah = 0        
+        ah = 0
     elseif f > 0.5 and f <= 1 then
         f = math.sin(math.pi*(f-0.5))
         ax = x

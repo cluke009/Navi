@@ -7,23 +7,23 @@ function love.load()
     -- shortcuts for love stuff
     le = love.event
     lg = love.graphics
-    
+
     -- colors
     col = {
         white = {255,255,255},
-	}
+    }
     -- images
     img = {
         logo = lg.newImage('pics/logo.png'),
-		face = lg.newImage('pics/face.png'),
+        face = lg.newImage('pics/face.png'),
         avatar = lg.newImage('pics/avatar.png'),
         bg = lg.newImage('pics/bg-highup.png')
     }
-    
+
     iw,ih = img.logo:getWidth(),img.logo:getHeight()
     sw,sh = 320,240
     lg.setBackgroundColor(unpack(col.white))
-	    
+
     -- for game
     m = {}
     m[1] = _navi:new('Hey!|,|, Welcome to |c{mblue}Navi|c{white}, a message library for |c{mblue}LOVE|c{white}. |nPress |c{mgreen}'..arc.btn.ent..'|c{white} to continue.',
@@ -53,10 +53,10 @@ end
 
 -- draw stuff
 function love.draw()
-	lg.setColor(col.white)
+    lg.setColor(col.white)
     lg.draw(img.bg,0,0)
     lg.draw(img.logo,0,20)
-    
+
     if (m_correct:is_over() or m_wrong:is_over()) then
         m2:play(10,10)
     else
