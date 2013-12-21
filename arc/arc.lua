@@ -35,6 +35,8 @@ arc.col = {
     mpurple = {192, 128, 255}
 }
 
+arc_path = string.gsub(arc_path, '%.', '/')
+
 -- font
 arc.fn = {}
 arc.fn.f = lg.newImageFont(arc_path .. '/fonts/font.png', " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.,!?-+/():;%&`'*#=[]\"")
