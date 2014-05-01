@@ -363,7 +363,9 @@ function _navi:play(x, y)
 
     -- scroll text
     if self.pos == 'scroll' and self.scroll then
-        lg.setScissor(x + self.clip[1], y + self.clip[2], self.clip[3], self.clip[4])
+        lg.setStencil(function()
+            love.graphics.rectangle("fill", self.clip[1], self.clip[2], self.clip[3], self.clip[4])
+        end)
         dys = -(self.view - 1) * arc.fn.h
         af  = (lt.getTime() - self.sct0) / arc.cfg.msg_tscroll
         if af >= 1 then
@@ -380,7 +382,7 @@ function _navi:play(x, y)
                 self.b[i]:draw(self.xtext + self.bdx[i], self.ytext + dys - af * arc.fn.h * self.nrows)
             end
         end
-        lg.setScissor()
+        lg.setStencil(nil)
         lg.pop()
         return
     end
