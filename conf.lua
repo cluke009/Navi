@@ -1,5 +1,5 @@
 function love.conf(t)
-    t.screen.width = 320
-    t.screen.height = 240
+    t.window.width = 320
+    t.window.height = 240
     t.title = "Navi"
 end
