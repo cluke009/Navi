@@ -6,6 +6,7 @@ local draw = {}
 
 -- draw cursor
 function draw.cursor(x, y)
+    lg.setColor(arc.col.white)
     lg.draw(arc.img.cursor, x, y)
 end
 
