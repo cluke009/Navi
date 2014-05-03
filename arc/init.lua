@@ -112,7 +112,8 @@ function _navi:new(s, opt)
     o.nchs = (o.chs and #o.chs) or 0
     local lwchs
     if o.chs then
-        lwchs, wcur = {}, arc.img.cursor:getWidth() + 3
+        lwchs = {}
+        local wcur = arc.img.cursor:getWidth() + 3
         for i = 1, o.nchs do lwchs[i] = arc.fn.w(o.chs[i]) + wcur end
         local lwmaxchs = math.max(unpack(lwchs))
         if w and lwmaxchs > w then w = lwmaxchs end
@@ -339,7 +340,7 @@ function _navi:play(x, y)
     local animo = self.pos == 'open' and (self.box_anim or self.box_open)
     local animc = self.pos == 'close' and (self.box_anim or self.box_close)
     if self.box and (animo or animc) then
-        af = (lt.getTime() - self.t0) / arc.cfg.msg_tanim
+        local af = (lt.getTime() - self.t0) / arc.cfg.msg_tanim
         draw.win_anim(self.xbox, self.ybox, self.wbox, self.hbox, af, self.pos)
         if af > 1 then
             self.pos = (self.pos == 'open' and 'show') or (self.pos == 'close' and 'over')
@@ -365,7 +366,7 @@ function _navi:play(x, y)
     if self.pos == 'scroll' and self.scroll then
         lg.setScissor(x + self.clip[1], y + self.clip[2], self.clip[3], self.clip[4])
         dys = -(self.view - 1) * arc.fn.h
-        af  = (lt.getTime() - self.sct0) / arc.cfg.msg_tscroll
+        local af  = (lt.getTime() - self.sct0) / arc.cfg.msg_tscroll
         if af >= 1 then
             self.pos = self.scpos
             if self.pos == 'show' then
@@ -567,7 +568,7 @@ function _navi.add_nls(s,w,opt)
     local si, sj, t
     local bi, bj, i, j = 1, 1, 1, 1
     local t = {['|c'] = 10, ['|,'] = 2, ['|:'] = 2, ['|!'] = 2}
-    b = str.unformat(s)
+    local b = str.unformat(s)
     -- i is current position in string
     -- j is current position minus formatting options
     for i = 1, s:len() do
@@ -589,7 +590,7 @@ function _navi.add_nls(s,w,opt)
             bi = si + 1
             bj = sj + 1
         end
-        z = s:sub(i, i + 1)
+        local z = s:sub(i, i + 1)
         -- subtract # chars in formatting options
         if not (t[z] == nil) then
             j = j - t[z]
